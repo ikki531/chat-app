@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import firebase from "../config/firebase";
+import { Link } from "react-router-dom";
 
-const SignUp = () => {
+const SignUp = ({ history }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
@@ -15,6 +16,7 @@ const SignUp = () => {
         user.updateProfile({
           displayName: name,
         });
+        history.push("/");
       })
       .catch((err) => {
         console.log(err);
@@ -62,6 +64,8 @@ const SignUp = () => {
           />
         </div>
         <button type="submit">Sign Up</button>
+        <br></br>
+        <Link to="/login">ログインページ</Link>
       </form>
     </div>
   );

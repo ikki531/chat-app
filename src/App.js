@@ -16,17 +16,23 @@ import { AuthProvider } from "./AuthService";
 
 import LoggedInRoute from "./LoggedInRoute";
 
+// styled-componentsのreset.css
+import { Reset } from "styled-reset";
+
 const App = () => {
   return (
-    <AuthProvider>
-      <Router>
-        <Switch>
-          <LoggedInRoute exact path="/" component={Room} />
-          <Route exact path="/login" component={Login} />
-          <Route exact path="/signup" component={SignUp} />
-        </Switch>
-      </Router>
-    </AuthProvider>
+    <>
+      {/* <Reset /> */}
+      <AuthProvider>
+        <Router>
+          <Switch>
+            <LoggedInRoute exact path="/" component={Room} />
+            <Route exact path="/login" component={Login} />
+            <Route exact path="/signup" component={SignUp} />
+          </Switch>
+        </Router>
+      </AuthProvider>
+    </>
   );
 };
 

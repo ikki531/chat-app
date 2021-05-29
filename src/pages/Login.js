@@ -1,6 +1,6 @@
 import React, { useState, useContext } from "react";
 import { AuthContext } from "../AuthService";
-import { Redirect } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import firebase from "../config/firebase";
 
 const Login = ({ history }) => {
@@ -60,6 +60,8 @@ const Login = ({ history }) => {
           />
         </div>
         <button type="submit">Login</button>
+        <br></br>
+        <Link to="/signup">新規登録ページ</Link>
       </form>
     </>
   );
